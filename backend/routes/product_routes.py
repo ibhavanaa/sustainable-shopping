@@ -7,7 +7,7 @@ product_bp = Blueprint("products", __name__)
 
 # Path to products.csv
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))  # backend/
-PRODUCTS_PATH = os.path.join(BASE_DIR, "data", "products.csv")
+PRODUCTS_PATH = os.path.join(BASE_DIR, "data", "finalwebsite.csv")
 
 
 @product_bp.route("/products", methods=["GET"])
@@ -24,6 +24,6 @@ def get_products():
         return jsonify({"products": products}), 200
 
     except FileNotFoundError:
-        return jsonify({"error": "products.csv not found"}), 404
+        return jsonify({"error": "finalwebsite.csv not found"}), 404
     except Exception as e:
         return jsonify({"error": str(e)}), 500

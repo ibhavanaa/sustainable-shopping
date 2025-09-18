@@ -1,4 +1,8 @@
-export const API_BASE_URL = 'http://localhost:5001';
+// ✅ Use environment variable or fallback
+export const API_BASE_URL =
+  import.meta.env.MODE === "development"
+    ? "http://localhost:5001"
+    : "http://35.173.215.140:5001";  // 👈 your EC2 public IP
 
 export const API_ENDPOINTS = {
   PRODUCTS: '/api/products',
