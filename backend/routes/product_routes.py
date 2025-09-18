@@ -7,7 +7,7 @@ product_bp = Blueprint("products", __name__)
 
 # Path to products.csv
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))  # backend/
-PRODUCTS_PATH = os.path.join(BASE_DIR, "data", "products.csv")
+PRODUCTS_PATH = os.path.join(BASE_DIR, "data", "finalwebsite.csv")
 
 
 @product_bp.route("/products", methods=["GET"])
