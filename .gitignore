@@ -1,0 +1,25 @@
+# Python / Flask
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+instance/
+.env
+
+# Build / dist artifacts
+.dist/
+*.log
+
+# Node / frontend (Vite)
+frontend/node_modules/
+frontend/dist/
+
+# macOS system files
+.DS_Store
+
+# Jupyter / ML related
+*.ipynb_checkpoints
+*.pickle
+*.joblib
+*.h5
+*.pkl
