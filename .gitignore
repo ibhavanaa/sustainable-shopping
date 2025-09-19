@@ -62,3 +62,9 @@ frontend/dist/
 *.joblib
 *.h5
 *.pkl
+
+
+# Ignore virtual environments
+venv/
+backend/venv/
+assistant_service/venv/
