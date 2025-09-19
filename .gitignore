@@ -1,12 +1,17 @@
+<<<<<<< HEAD
 # ==========================================
 # Python / Flask
 # ==========================================
+=======
+# Python / Flask
+>>>>>>> e5e0c99991257b0eabcd013b11a24e2136c02ec4
 .venv/
 __pycache__/
 *.pyc
 *.pyo
 instance/
 .env
+<<<<<<< HEAD
 *.log
 
 # Ignore Flask-specific environment for assistant_service
@@ -37,6 +42,21 @@ frontend/dist/
 # ==========================================
 # Jupyter / ML related
 # ==========================================
+=======
+
+# Build / dist artifacts
+.dist/
+*.log
+
+# Node / frontend (Vite)
+frontend/node_modules/
+frontend/dist/
+
+# macOS system files
+.DS_Store
+
+# Jupyter / ML related
+>>>>>>> e5e0c99991257b0eabcd013b11a24e2136c02ec4
 *.ipynb_checkpoints
 *.pickle
 *.joblib
