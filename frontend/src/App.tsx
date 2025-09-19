@@ -3,10 +3,7 @@ import Header from './components/common/Header';
 import Home from './pages/Home';
 import ProductSearch from './pages/ProductSearch';
 import CategoryPage from './pages/CategoryPage';
-<<<<<<< HEAD
 import ChatAssistant from './components/ChatAssistant';
-=======
->>>>>>> e5e0c99991257b0eabcd013b11a24e2136c02ec4
 import { Product } from './types/Product';
 import { apiService } from './services/api';
 
@@ -19,10 +16,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState<PageState>({ type: 'home' });
   const [searchQuery, setSearchQuery] = useState('');
   const [history, setHistory] = useState<PageState[]>([]);
-<<<<<<< HEAD
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-=======
->>>>>>> e5e0c99991257b0eabcd013b11a24e2136c02ec4
 
   // Check backend health on app load
   useEffect(() => {
@@ -83,12 +77,8 @@ function App() {
   };
 
   const handleProductClick = (product: Product) => {
-<<<<<<< HEAD
     // Set selected product for AI assistant
     setSelectedProduct(product);
-=======
-    // Product detail is handled within the respective page components
->>>>>>> e5e0c99991257b0eabcd013b11a24e2136c02ec4
     console.log('Product clicked:', product);
   };
 
@@ -125,10 +115,7 @@ function App() {
         showBack={currentPage.type !== 'home'}
       />
       {renderCurrentPage()}
-<<<<<<< HEAD
       <ChatAssistant selectedProduct={selectedProduct} />
-=======
->>>>>>> e5e0c99991257b0eabcd013b11a24e2136c02ec4
     </div>
   );
 }

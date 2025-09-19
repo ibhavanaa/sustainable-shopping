@@ -1,12 +1,4 @@
-<<<<<<< HEAD
 export const API_BASE_URL = 'http://localhost:5001';
-=======
-// ✅ Use environment variable or fallback
-export const API_BASE_URL =
-  import.meta.env.MODE === "development"
-    ? "http://localhost:5001"
-    : "http://35.173.215.140:5001";  // 👈 your EC2 public IP
->>>>>>> e5e0c99991257b0eabcd013b11a24e2136c02ec4
 
 export const API_ENDPOINTS = {
   PRODUCTS: '/api/products',
@@ -26,8 +18,4 @@ export const SORT_OPTIONS = [
   { value: 'reviews_asc', label: 'Reviews: Low to High' },
   { value: 'reviews_desc', label: 'Reviews: High to Low' },
   { value: 'bestseller', label: 'Best Sellers First' },
-<<<<<<< HEAD
 ];
-=======
-];
->>>>>>> e5e0c99991257b0eabcd013b11a24e2136c02ec4

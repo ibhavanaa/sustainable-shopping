@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, Bot, User, Leaf, AlertTriangle, X } from 'lucide-react';
+import { Send, Bot, User, X } from 'lucide-react';
 import { Product } from '../types/Product';
 
 interface ChatMessage {
@@ -15,6 +15,16 @@ interface ChatResponse {
     product_detected?: boolean;
     recommendations_count?: number;
     error?: string;
+  };
+}
+
+interface ChatRequestBody {
+  message: string;
+  product_context?: {
+    title: string;
+    price: number;
+    category: string;
+    ecoLabel: number;
   };
 }
 
@@ -69,7 +79,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ className = '', selectedP
 
     try {
       // Include product context if available
-      const requestBody: any = { message: userMessage.content };
+      const requestBody: ChatRequestBody = { message: userMessage.content };
       if (selectedProduct) {
         requestBody.product_context = {
           title: selectedProduct.title,
@@ -120,11 +130,6 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ className = '', selectedP
     }
   };
 
-  const handleClose = () => {
-    console.log('Close button clicked'); // Debug log
-    setIsOpen(false);
-  };
-
   const handleToggle = () => {
     console.log('Toggle button clicked, current state:', isOpen);
     setIsOpen(!isOpen);
@@ -135,33 +140,6 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ className = '', selectedP
 
   const formatTime = (date: Date) => {
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  };
-
-  const getEcoBadge = (ecoLabel: number) => {
-    switch (ecoLabel) {
-      case 2:
-        return <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-          <Leaf className="h-3 w-3 mr-1" />
-          Eco-friendly
-        </span>;
-      case 1:
-        return <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-          <AlertTriangle className="h-3 w-3 mr-1" />
-          Moderate
-        </span>;
-      default:
-        return <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
-          <X className="h-3 w-3 mr-1" />
-          Harmful
-        </span>;
-    }
-  };
-
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD'
-    }).format(price);
   };
 
   console.log('ChatAssistant render - isOpen:', isOpen, 'selectedProduct:', selectedProduct?.title);
