@@ -1,0 +1,44 @@
+# ==========================================
+# Python / Flask
+# ==========================================
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+instance/
+.env
+*.log
+
+# Ignore Flask-specific environment for assistant_service
+assistant_service/.env
+assistant_service/__pycache__/
+assistant_service/instance/
+assistant_service/.venv/
+
+# ==========================================
+# Build / dist artifacts
+# ==========================================
+.dist/
+build/
+dist/
+*.egg-info/
+
+# ==========================================
+# Node / frontend (Vite)
+# ==========================================
+frontend/node_modules/
+frontend/dist/
+
+# ==========================================
+# macOS system files
+# ==========================================
+.DS_Store
+
+# ==========================================
+# Jupyter / ML related
+# ==========================================
+*.ipynb_checkpoints
+*.pickle
+*.joblib
+*.h5
+*.pkl
