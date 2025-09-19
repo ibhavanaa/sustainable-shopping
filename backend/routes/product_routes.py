@@ -8,7 +8,7 @@ product_bp = Blueprint("products", __name__)
 # Path to products.csv
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))  # backend/
 <<<<<<< HEAD
-PRODUCTS_PATH = os.path.join(BASE_DIR, "data", "products.csv")
+PRODUCTS_PATH = os.path.join(BASE_DIR, "data", "finalwebsite.csv")
 =======
 PRODUCTS_PATH = os.path.join(BASE_DIR, "data", "finalwebsite.csv")
 >>>>>>> e5e0c99991257b0eabcd013b11a24e2136c02ec4
