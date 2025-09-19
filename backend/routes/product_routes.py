@@ -5,19 +5,15 @@ import pandas as pd
 # Blueprint for product routes
 product_bp = Blueprint("products", __name__)
 
-# Path to products.csv
+# Path to products.csv (pointing to finalwebsite.csv for consistency)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))  # backend/
-<<<<<<< HEAD
-PRODUCTS_PATH = os.path.join(BASE_DIR, "data", "products.csv")
-=======
 PRODUCTS_PATH = os.path.join(BASE_DIR, "data", "finalwebsite.csv")
->>>>>>> e5e0c99991257b0eabcd013b11a24e2136c02ec4
 
 
 @product_bp.route("/products", methods=["GET"])
 def get_products():
     """
-    Fetch all products from products.csv and return as JSON.
+    Fetch all products from finalwebsite.csv and return as JSON.
     """
     try:
         df = pd.read_csv(PRODUCTS_PATH)
@@ -28,10 +24,6 @@ def get_products():
         return jsonify({"products": products}), 200
 
     except FileNotFoundError:
-<<<<<<< HEAD
-        return jsonify({"error": "products.csv not found"}), 404
-=======
         return jsonify({"error": "finalwebsite.csv not found"}), 404
->>>>>>> e5e0c99991257b0eabcd013b11a24e2136c02ec4
     except Exception as e:
         return jsonify({"error": str(e)}), 500
